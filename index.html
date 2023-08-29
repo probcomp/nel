@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="3D Neural Embedding Likelihood for Robust Probabilistic Inverse Graphics">
+  <meta name="description" content="3D Neural Embedding Likelihood for Robust Probabilistic Inverse Graphics">
+  <meta name="keywords" content="RoboTAP">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>3DNEL</title>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+
+  <!-- <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
   <link rel="icon" href="./static/images/favicon.png">
 
@@ -24,304 +25,312 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body>
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  
-</nav>
 
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">3D Neural Embedding Likelihood for Robust Probabilistic Inverse Graphics</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://stanniszhou.github.io/">Guangyao Zhou</a>* <sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="http://www.nishadg.com/">Nishad Gothoskar</a>* <sup>2</sup>,</span><br>
-            <span class="author-block">
-              <a href="https://liruiw.github.io/">Lirui Wang</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://web.mit.edu/cocosci/josh.html">Joshua Tenenbaum</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://research.ibm.com/people/dan-gutfreund">Dan Gutfreund</a><sup>3</sup>,
-            </span><br>
-            <span class="author-block">
-              <a href="https://www.tsc.uc3m.es/~miguel/index.php">Miguel Lazaro-Gredilla</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://dileeplearning.github.io/">Dileep George</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://probcomp.csail.mit.edu/principal-investigator/">Vikash Mansinghka</a><sup>2</sup>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Google DeepMind</span> &nbsp;&nbsp;
-            <span class="author-block"><sup>2</sup>MIT</span>&nbsp;&nbsp;
-            <span class="author-block"><sup>3</sup>IBM</span>
-          </div>
-
-          <div class="is-size-6 publication-authors">
-            <span class="author-block">* Equal Contribution</span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">ICCV 2023</span>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/2302.03744.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2302.03744"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/deepmind/threednel"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-            <img style="max-width: 60vw;" src="./static/images/likelihood_figure.svg" />
-        </div>
-      </div>
-      <br><br>
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            The ability to perceive and understand 3D scenes is crucial for many applications
-            in computer vision and robotics. Inverse graphics is an appealing approach to 3D scene
-            understanding that aims to infer the 3D scene structure from 2D images.
-            In this paper, we introduce probabilistic modeling to the inverse graphics framework
-            to quantify uncertainty and achieve robustness in 6D pose estimation tasks.
-            Specifically, we propose 3D Neural Embedding Likelihood (3DNEL) as a unified probabilistic
-            model over RGB-D images, and develop efficient inference procedures on 3D scene
-            descriptions. 3DNEL effectively combines learned neural embeddings from RGB with depth
-            information to improve robustness in sim-to-real 6D object pose estimation from RGB-D
-            images. Performance on the YCB-Video dataset is on par with state-of-the-art yet is
-            much more robust in challenging regimes. In contrast to discriminative approaches,
-            3DNEL's probabilistic generative formulation jointly models multiple objects in a scene,
-            quantifies uncertainty in a principled way, and handles object pose tracking under heavy
-            occlusion. Finally, 3DNEL provides a principled framework for incorporating prior
-            knowledge about the scene and objects, which allows natural extension to additional tasks
-            like camera pose tracking from video.
-          </p>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="container is-max-desktop">
-      <!-- Animation. -->
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Inference program</h2>
-          <p>
-            The 3DNEL MSIGP pipeline starts by computing the query embeddings for each object
-            and the observed point cloud image from RGB-D observations. Then, a fast enumerative
-            procedure produces the pose hypotheses for the objects, and construct an initial 3D scene description.
-            We further perform stochastic search with 3DNEL using three types of MH proposals (1) pose hypotheses proposals 
-            (2) ICP proposals to align an object to point cloud data, and (3) random walk proposals that
-            refines poses with local perturbations. The result is a 3D scene description that explains the
-            observed RGB-D image. 3DNEL's joint modeling of multiple objects through the mixture model formulation
-            enables robust estimation on this challenging scene with two similar-looking clamps.
-          </p>
-          <br>
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-full-width">
-              <img style="max-width: 60vw;" src="./static/images/pipeline_figure.svg" />
-            </div>
-          </div>
-  
-        </div>
-      </div>
-      <!--/ Animation. -->
+  <section class="hero">
+    <div class="hero-body">
       <div class="container is-max-desktop">
-        <h2 class="title is-3">3DNEL achieves accurate sim-to-real object pose estimation</h2>
-        
-            <p>3DNEL MSIGP achieves accuracy on par with SOTA, and outperforms ablations on YCB-V. We report Average Recall on YCB-V in the sim-to-real setup using RGB-D inputs. Results for 3DNEL MSIGP are averaged over 5 runs. Standard deviation is below 0.2% for all setups. 3DNEL MSIGP significantly outperforms SurfEMB depiste using the same underlying models, highlighting the benefits of 3DNEL’s principled probabilistic modeling.
-            </p>
-            <br>
-
-	<div class="columns is-centered has-text-centered">
-	  <div class="column is-full-width">
-	  <img src="./static/images/accuracy.png" />
-	  </div>
-	</div>      
-
-        <h2 class="title is-3">Uncertainty Quantification</h2>
-            <p>
-              3DNEL infers full posterior distributions over 6D pose. Here we show 3DNEL identifies
-              pose uncertainty for the red bowl due to its inherent symmetry, and accurately captures
-              the range of equally likely poses for the red mug when its handle is not visible.
-           </p>
-            <br>
-
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <img src="./static/images/pose_uncertainty.svg" />
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">3D Neural Embedding Likelihood for Robust Probabilistic Inverse Graphics</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://stanniszhou.github.io/">Guangyao Zhou</a>* <sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="http://www.nishadg.com/">Nishad Gothoskar</a>* <sup>2</sup>,</span><br>
+              <span class="author-block">
+                <a href="https://liruiw.github.io/">Lirui Wang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://web.mit.edu/cocosci/josh.html">Joshua Tenenbaum</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://research.ibm.com/people/dan-gutfreund">Dan Gutfreund</a><sup>3</sup>,
+              </span><br>
+              <span class="author-block">
+                <a href="https://www.tsc.uc3m.es/~miguel/index.php">Miguel Lazaro-Gredilla</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://dileeplearning.github.io/">Dileep George</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://probcomp.csail.mit.edu/principal-investigator/">Vikash Mansinghka</a><sup>2</sup>
+              </span>
             </div>
-        </div>      
-
-        <h2 class="title is-3">Robustness</h2>
-            <p>
-              3DNEL MSIGP improves robustness over SurfEMB. Here we compare prediction error (measured by VSD) between
-              SurfEMB and 3DNEL MSIGP across 4123 object instances in YCB-V. Each point on the scatter plot represents
-              an instance. Points above the dashed line represent instances for which 3DNEL MSIGP has lower prediction error.
-             </p>
-            <br>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-            <img src="./static/images/robustness.png" />
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Google DeepMind</span> &nbsp;&nbsp;
+              <span class="author-block"><sup>2</sup>MIT</span>&nbsp;&nbsp;
+              <span class="author-block"><sup>3</sup>IBM</span>
             </div>
-        </div>
-        <br><br>
-        <!--/ Matting. -->
-        <div class="column is-centered">
-          <div class="container">
-              <div id="results-carousel" class="carousel results-carousel">
-                <div class="item">
-          	      <!-- Existing SOTA separately models each individual object, and predicts both clamps to be in the back; 3DNEL jointly models multiple objects in a scene and avoids such errors. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/1.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- Existing SOTA confuses the two similar-looking clamps; 3DNEL jointly reasons about combinations of multiple pose hypotheses for each object, and avoids such errors. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/2.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL robustly aggregates information across the entire image, and can deal with missing 2D detections. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/3.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL combines RGB and depth information in a principled way, and can robustly handle cases where RGB alone is not informative enough. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/4.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL combines RGB and depth information in a principled way, and can robustly handle cases where RGB alone is not informative enough. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/5.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL combines RGB and depth information in a principled way, and can robustly handle cases where RGB alone is not informative enough. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/6.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL combines RGB and depth information in a principled way, and can robustly handle cases where RGB alone is not informative enough. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/7.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL robustly aggregates information across the entire image, and can deal with missing 2D detections. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/8.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL robustly aggregates information across the entire image, and can deal with missing 2D detections. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/9.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL robustly aggregates information across the entire image, and can deal with missing 2D detections. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/10.svg"/>
-                </div>
-                <div class="item">
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/11.svg"/>
-                </div>
-                <div class="item">
-          	      <!-- 3DNEL robustly aggregates information across the entire image, and can deal with missing 2D detections. -->
-                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/12.svg"/>
-                </div>
+  
+            <div class="is-size-6 publication-authors">
+              <span class="author-block">* Equal Contribution</span>
+            </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">ICCV 2023</span>
+            </div>
+  
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2302.03744.pdf"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2302.03744"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/deepmind/threednel"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
               </div>
             </div>
-        </div> 
-        <!-- <div class="columns is-centered has-text-centered"> -->
-          <!-- <div class="column is-full-width"> -->
-          <!-- <img style="max-width: 80vw;" class="center" src="./static/images/qualitative_figure.svg" /> -->
-          <!-- </div> -->
-        <!-- </div> -->
-  
-      </div>
-      
-
-
-    <!--/ Matting. -->
-
-
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="https://arxiv.org/abs/2302.03744">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/deepmind/threednel" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/deepmind-tapir/deepmind-tapir.github.io">source code</a> of this website, which itelf is a fork of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-            We just ask that you link back to this page in the footer.
-          </p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="section">
+
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+            <img src="./static/images/likelihood_figure.svg" />
+        </div>
+      </div>
+
+
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The ability to perceive and understand 3D scenes is crucial for many applications
+              in computer vision and robotics. Inverse graphics is an appealing approach to 3D scene
+              understanding that aims to infer the 3D scene structure from 2D images.
+              In this paper, we introduce probabilistic modeling to the inverse graphics framework
+              to quantify uncertainty and achieve robustness in 6D pose estimation tasks.
+              Specifically, we propose 3D Neural Embedding Likelihood (3DNEL) as a unified probabilistic
+              model over RGB-D images, and develop efficient inference procedures on 3D scene
+              descriptions. 3DNEL effectively combines learned neural embeddings from RGB with depth
+              information to improve robustness in sim-to-real 6D object pose estimation from RGB-D
+              images. Performance on the YCB-Video dataset is on par with state-of-the-art yet is
+              much more robust in challenging regimes. In contrast to discriminative approaches,
+              3DNEL's probabilistic generative formulation jointly models multiple objects in a scene,
+              quantifies uncertainty in a principled way, and handles object pose tracking under heavy
+              occlusion. Finally, 3DNEL provides a principled framework for incorporating prior
+              knowledge about the scene and objects, which allows natural extension to additional tasks
+              like camera pose tracking from video.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+          <div class="content">
+            <h2 class="title is-3">Inference program</h2>
+              <div class="content has-text-justified">
+              <p>
+              <br>
+
+                The 3DNEL MSIGP pipeline starts by computing the query embeddings for each object
+                and the observed point cloud image from RGB-D observations. Then, a fast enumerative
+                procedure produces the pose hypotheses for the objects, and construct an initial 3D scene description.
+                We further perform stochastic search with 3DNEL using three types of MH proposals (1) pose hypotheses proposals 
+                (2) ICP proposals to align an object to point cloud data, and (3) random walk proposals that
+                refines poses with local perturbations. The result is a 3D scene description that explains the
+                observed RGB-D image. 3DNEL's joint modeling of multiple objects through the mixture model formulation
+                enables robust estimation on this challenging scene with two similar-looking clamps.
+              </p>
+            </div>
+            <img src="./static/images/pipeline_figure.svg" class="interpolation-image" alt="TAPIR architecture." />
+
+        </div>
+      </div>
+    </div>
+    <br><br><br>
+
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">3DNEL achieves accurate sim-to-real object pose estimation</h2>
+      
+          <p>3DNEL MSIGP achieves accuracy on par with SOTA, and outperforms ablations on YCB-V. We report Average Recall on YCB-V in the sim-to-real setup using RGB-D inputs. Results for 3DNEL MSIGP are averaged over 5 runs. Standard deviation is below 0.2% for all setups. 3DNEL MSIGP significantly outperforms SurfEMB depiste using the same underlying models, highlighting the benefits of 3DNEL’s principled probabilistic modeling.
+          </p>
+          <br>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+        <img src="./static/images/accuracy.png" />
+        </div>
+      </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Uncertainty Quantification</h2>
+      
+          <p>3DNEL MSIGP achieves accuracy on par with SOTA, and outperforms ablations on YCB-V. We report Average Recall on YCB-V in the sim-to-real setup using RGB-D inputs. Results for 3DNEL MSIGP are averaged over 5 runs. Standard deviation is below 0.2% for all setups. 3DNEL MSIGP significantly outperforms SurfEMB depiste using the same underlying models, highlighting the benefits of 3DNEL’s principled probabilistic modeling.
+          </p>
+          <br>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+            <img src="./static/images/pose_uncertainty.svg" />
+        </div>
+      </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Robustness</h2>
+      
+          <p>
+            3DNEL MSIGP improves robustness over SurfEMB. Here we compare prediction error (measured by VSD) between
+            SurfEMB and 3DNEL MSIGP across 4123 object instances in YCB-V. Each point on the scatter plot represents
+            an instance. Points above the dashed line represent instances for which 3DNEL MSIGP has lower prediction error.
+          </p>
+          <br>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+            <img src="./static/images/robustness.png" />
+        </div>
+      </div>
+  
+      <div class="columns is-centered has-text-centered">
+        <!-- Results. -->
+        <div class="column is-four-fifths">
+          <div class="content">
+          
+            <div class="content has-text-justified">
+            </div>
+            <div class="container">
+              <div id="results-carousel" class="carousel results-carousel">
+                <div class="item" id="success1">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/1.svg"/>
+                </div>
+                <div class="item" id="success2">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/2.svg"/>
+                </div>
+                <div class="item" id="success3">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/3.svg"/>
+                </div>
+                <div class="item" id="success4">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/4.svg"/>
+                </div>
+                <div class="item" id="success5">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/5.svg"/>
+                </div>
+                <div class="item" id="success6">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/6.svg"/>
+                </div>
+                <div class="item" id="success7">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/7.svg"/>
+                </div>
+                <div class="item" id="success8">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff' src="./static/images/qualitative/8.svg"/>
+                </div>
+                <div class="item" id="success9">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff'  src="./static/images/qualitative/9.svg"/>
+                </div>
+                <div class="item" id="success10">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff; border-right:4vw solid #ffffff;' src="./static/images/qualitative/10.svg"/>
+                </div>
+                <div class="item" id="success11">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff;  border-right:4vw solid #ffffff' src="./static/images/qualitative/11.svg"/>
+                </div>
+                <div class="item" id="success12">
+                  <img  style='border-top:2vh solid #ffffff; border-bottom:2vh solid #ffffff; border-left:4vw solid #ffffff;  border-right:4vw solid #ffffff' src="./static/images/qualitative/12.svg"/>
+                </div>
+                
+
+              </div>
+            </div>
+            <p id="success-text">Javascript Required</p>
+            
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!--
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
   </div>
-</footer>
+</section>
+-->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/abs/2302.03744">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/deepmind/threednel" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a
+                href="https://github.com/robotap/robotap.github.io">source code</a> of this website, which
+              itelf is a fork of <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+              We just ask that you link back to this page in the footer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
+
 </html>
