@@ -158,48 +158,72 @@
       </div>
     </div>
     <br><br>
-
     <div class="container is-max-desktop">
-
       <div class="columns is-centered has-text-centered">
           <div class="content">
-            <h2 class="title is-3">3D Neural Embedding Likelihood</h2>
+            <h2 class="title is-3">3D Neural Embedding Likelihood (3DNEL)</h2>
+            <img src="./static/images/likelihood_figure.svg" />
+	    <br>
               <div class="content has-text-justified">
               <p>
-              <br>
-
-                The 3DNEL MSIGP pipeline starts by computing the query embeddings for each object
-                and the observed point cloud image from RGB-D observations. Then, a fast enumerative
-                procedure produces the pose hypotheses for the objects, and construct an initial 3D scene description.
-                We further perform stochastic search with 3DNEL using three types of MH proposals (1) pose hypotheses proposals 
-                (2) ICP proposals to align an object to point cloud data, and (3) random walk proposals that
-                refines poses with local perturbations. The result is a 3D scene description that explains the
-                observed RGB-D image. 3DNEL's joint modeling of multiple objects through the mixture model formulation
-                enables robust estimation on this challenging scene with two similar-looking clamps.
+		3DNEL defines the probability of an observed RGB-D image conditioned on a 3D scene description. We first render the 3D scene description into: (1) a depth image, which is transformed to a rendered point cloud image, (2) a semantic segmentation map, and (3) the object coordinate image (each pixel contains the object frame coordinate of the object surface point from which the pixel originates). The object coordinate image is transformed, via the key models, into key embeddings. The observed RGB image is transformed, via the query models, into query embeddings. The observed depth is transformed into an observed point cloud image. The 3DNEL Energy Function is evaluated using the rendered point cloud image, semantic segmentation, key embeddings, the observed point cloud image, and query embeddings.
               </p>
             </div>
-            <img src="./static/images/likelihood_figure.svg" />
-            <!-- <img src="./static/images/pipeline_figure.svg" class="interpolation-image" alt="Pipeline figure." /> -->
-
         </div>
       </div>
     </div>
-    <br><br><br>
+    <br><br>
 
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
       <h2 class="title is-3">Accurate Sim-to-real Object Pose Estimation</h2>
       </div>
-      
-          <p>3DNEL MSIGP achieves accuracy on par with SOTA, and outperforms ablations on YCB-V. We report Average Recall on YCB-V in the sim-to-real setup using RGB-D inputs. Results for 3DNEL MSIGP are averaged over 5 runs. Standard deviation is below 0.2% for all setups. 3DNEL MSIGP significantly outperforms SurfEMB depiste using the same underlying models, highlighting the benefits of 3DNEL’s principled probabilistic modeling.
-          </p>
-          <br>
-
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-full-width">
-        <img src="./static/images/accuracy.png" />
-        </div>
+      <br> 
+      <div class="columns">
+	 <div class="content has-text-justified">
+	  <p>
+	  We evaluate on the <a href="https://bop.felk.cvut.cz/datasets/">YCB-V</a> dataset from <a href="https://bop.felk.cvut.cz/">Benchmark for 6D Object Pose Estimation</a> in the <b>sim-to-real setup</b>. The reported <a href="https://bop.felk.cvut.cz/challenges/#taskdefinition">average recall metric</a> measures the pose estimation accuracy, and is calculated using the <a href="https://github.com/thodan/bop_toolkit/blob/master/scripts/eval_bop19_pose.py">BOP Toolkit</a>. Higher is better.
+	  </p>
+	 </div>
       </div>
+      <br>
+      <div class="columns is-centered">
+	 <div class="column is-full-width">
+	 <div class="content">
+	  <table>
+            <tr>
+              <th><p style="text-align:left">Method</p></th>
+	      <th><p style="text-align:center">Average recall on <a href="https://bop.felk.cvut.cz/datasets/">YCB-V</a></p></th>
+            </tr>
+            <tr>
+		    <td style="border-bottom: none;"><p style="text-align:left">3DNEL Multi-stage Inverse Graphics Pipeline (MSIGP)</a></p></td>
+		    <td style="border-bottom: none;"><p style="text-align:center"><b>84.85%</b></p></td>
+            </tr>
+            <tr>
+		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://surfemb.github.io/">SurfEMB</a></p></td>
+              <td style="border-bottom: none;"><p style="text-align:center">80.00%</p></td>
+            </tr>
+            <tr>
+		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/Simple-Robotics/cosypose">CosyPose</a></p></td>
+              <td style="border-bottom: none;"><p style="text-align:center">71.42%</p></td>
+            </tr>
+            <tr>
+		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/princeton-vl/Coupled-Iterative-Refinement">Coupled Iterative Refinement</a></p></td>
+              <td style="border-bottom: none;"><p style="text-align:center">76.58%</p></td>
+            </tr>
+            <tr>
+		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/ethnhe/FFB6D">FFB6D</a></p></td>
+              <td style="border-bottom: none;"><p style="text-align:center">75.80%</p></td>
+            </tr>
+            <tr>
+		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://megapose6d.github.io/">MegaPose</a></p></td>
+              <td style="border-bottom: none;"><p style="text-align:center">63.3%</p></td>
+            </tr>
+          </table>
+	 </div>
+	 </div>
+	 <br>
+
     </div>
 
     <br>
