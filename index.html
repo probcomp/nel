@@ -184,6 +184,9 @@
 	  <p>
 	  We evaluate on the <a href="https://bop.felk.cvut.cz/datasets/">YCB-V</a> dataset from <a href="https://bop.felk.cvut.cz/">Benchmark for 6D Object Pose Estimation</a> in the <b>sim-to-real setup</b>. The reported <a href="https://bop.felk.cvut.cz/challenges/#taskdefinition">average recall metric</a> measures the pose estimation accuracy, and is calculated using the <a href="https://github.com/thodan/bop_toolkit/blob/master/scripts/eval_bop19_pose.py">BOP Toolkit</a>. Higher is better.
 	  </p>
+	  <p>
+	<a href="https://surfemb.github.io/">SurfEMB</a> is the previous SOTA for sim-to-real 6D object pose estimation. For <a href="https://surfemb.github.io/">SurfEMB</a>, <a href="https://github.com/ethnhe/FFB6D">FFB6D</a> and <a href="https://megapose6d.github.io/">MegaPose</a> we use the numbers reported by the authors. For <a href="https://github.com/Simple-Robotics/cosypose">CosyPose</a> and <a href="https://github.com/princeton-vl/Coupled-Iterative-Refinement">Coupled Iterative Refinement</a> we use the publicly available codebases to re-evaluate in the sim-to-real setup. Our proposed 3DNEL Multi-stage Inverse Graphics Pipeline (MSIGP) significantly outperforms previous SOTA.
+	  </p>
 	 </div>
       </div>
       <br>
@@ -204,20 +207,20 @@
               <td style="border-bottom: none;"><p style="text-align:center">80.00%</p></td>
             </tr>
             <tr>
-		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/Simple-Robotics/cosypose">CosyPose</a></p></td>
-              <td style="border-bottom: none;"><p style="text-align:center">71.42%</p></td>
-            </tr>
-            <tr>
-		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/princeton-vl/Coupled-Iterative-Refinement">Coupled Iterative Refinement</a></p></td>
-              <td style="border-bottom: none;"><p style="text-align:center">76.58%</p></td>
-            </tr>
-            <tr>
 		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/ethnhe/FFB6D">FFB6D</a></p></td>
               <td style="border-bottom: none;"><p style="text-align:center">75.80%</p></td>
             </tr>
             <tr>
 		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://megapose6d.github.io/">MegaPose</a></p></td>
               <td style="border-bottom: none;"><p style="text-align:center">63.3%</p></td>
+            </tr>
+            <tr>
+		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/Simple-Robotics/cosypose">CosyPose</a></p></td>
+              <td style="border-bottom: none;"><p style="text-align:center">71.42%</p></td>
+            </tr>
+            <tr>
+		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/princeton-vl/Coupled-Iterative-Refinement">Coupled Iterative Refinement</a></p></td>
+              <td style="border-bottom: none;"><p style="text-align:center">76.58%</p></td>
             </tr>
           </table>
 	 </div>
@@ -235,11 +238,9 @@
       <div class="container is-max-desktop">
         <h3 class="title is-4">More Robust Object Pose Estimation</h3>
         
-            <p>
-              3DNEL MSIGP improves robustness over SurfEMB. Here we compare prediction error (measured by VSD) between
-              SurfEMB and 3DNEL MSIGP across 4123 object instances in YCB-V. Each point on the scatter plot represents
-              an instance. Points above the dashed line represent instances for which 3DNEL MSIGP has lower prediction error.
-            </p>
+            <!-- <p> -->
+	    <!-- Test -->
+            <!-- </p> -->
             <br>
 
         <div class="columns is-centered has-text-centered">
@@ -305,7 +306,7 @@
         </div>
       <h3 class="title is-4">Natural Support for Uncertainty Quantification</h3>
       
-          <p>3DNEL MSIGP achieves accuracy on par with SOTA, and outperforms ablations on YCB-V. We report Average Recall on YCB-V in the sim-to-real setup using RGB-D inputs. Results for 3DNEL MSIGP are averaged over 5 runs. Standard deviation is below 0.2% for all setups. 3DNEL MSIGP significantly outperforms SurfEMB depiste using the same underlying models, highlighting the benefits of 3DNEL’s principled probabilistic modeling.
+          <!-- <p>3DNEL MSIGP achieves accuracy on par with SOTA, and outperforms ablations on YCB-V. We report Average Recall on YCB-V in the sim-to-real setup using RGB-D inputs. Results for 3DNEL MSIGP are averaged over 5 runs. Standard deviation is below 0.2% for all setups. 3DNEL MSIGP significantly outperforms SurfEMB depiste using the same underlying models, highlighting the benefits of 3DNEL’s principled probabilistic modeling. -->
           </p>
           <br>
 
