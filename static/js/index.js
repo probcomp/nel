@@ -49,8 +49,8 @@ $(document).ready(function() {
     // Loop on each carousel initialized
     for(var i = 0; i < carousels.length; i++) {
         var success_text = [               
-          "Existing SOTA separately models each individual object, and predicts both clamps to be in the back; 3DNEL jointly models multiple objects in a scene and avoids such errors.",
-          "Existing SOTA confuses the two similar-looking clamps; 3DNEL jointly reasons about combinations of multiple pose hypotheses for each object, and avoids such errors.",
+          "Existing SOTA SurfEMB separately models each individual object, and predicts both clamps to be in the back; 3DNEL jointly models multiple objects in a scene and avoids such errors.",
+          "Existing SOTA SurfEMB confuses the two similar-looking clamps; 3DNEL jointly reasons about combinations of multiple pose hypotheses for each object, and avoids such errors.",
           "3DNEL robustly aggregates information across the entire image, and can deal with missing 2D detections.",
           "3DNEL combines RGB and depth information in a principled way, and can robustly handle cases where RGB alone is not informative enough.",
           "3DNEL combines RGB and depth information in a principled way, and can robustly handle cases where RGB alone is not informative enough.",

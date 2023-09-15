@@ -120,11 +120,11 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
             <img src="./static/images/teaser_video.gif" />
-	    <!-- <div class="content has-text-centered"> -->
-		<!-- <p> -->
-		<!-- Explanation of the teaser video, giving an overview of what 3DNEL is about. -->
-		<!-- </p> -->
-	    <!-- </div> -->
+	    <div class="content has-text-justified">
+		<p>
+		3D neural embedding likelihood (3DNEL) combines RGB and depth information in a principled way, and defines a likelihood of real noisy RGB-D images given a 3D scene description. We formulate 6D pose estimation as posterior inference using 3DNEL in an inverse graphics framework, and develop an efficient multi-stage inverse graphics pipeline (MSIGP) based on coarse enumerative pose hypotheses generation and stochastic search. In addition to achieving SOTA performance in sim-to-real 6D pose estimation, 3DNEL's probabilistic formulation also improves pose estimation robustness, naturally quantifies uncertainty, and supports extension to additional tasks using principled probabilsitic inference without task-specific retraining.
+		</p>
+	    </div>
         </div>
       </div>
 
@@ -182,7 +182,7 @@
       <div class="columns">
 	 <div class="content has-text-justified">
 	  <p>
-	  We evaluate on the <a href="https://bop.felk.cvut.cz/datasets/">YCB-V</a> dataset from <a href="https://bop.felk.cvut.cz/">Benchmark for 6D Object Pose Estimation</a> in the <b>sim-to-real setup</b>. The reported <a href="https://bop.felk.cvut.cz/challenges/#taskdefinition">average recall metric</a> measures the pose estimation accuracy, and is calculated using the <a href="https://github.com/thodan/bop_toolkit/blob/master/scripts/eval_bop19_pose.py">BOP Toolkit</a>. Higher is better.
+	  We evaluate on the <a href="https://bop.felk.cvut.cz/datasets/">YCB-V</a> dataset from the <a href="https://bop.felk.cvut.cz/">Benchmark for 6D Object Pose Estimation</a> in the <b>sim-to-real setup</b>. The reported <a href="https://bop.felk.cvut.cz/challenges/#taskdefinition">average recall</a> metric measures the pose estimation accuracy, and is calculated using the <a href="https://github.com/thodan/bop_toolkit/blob/master/scripts/eval_bop19_pose.py">BOP Toolkit</a>. Higher is better.
 	  </p>
 	  <p>
 	<a href="https://surfemb.github.io/">SurfEMB</a> is the previous SOTA for sim-to-real 6D object pose estimation. For <a href="https://surfemb.github.io/">SurfEMB</a>, <a href="https://github.com/ethnhe/FFB6D">FFB6D</a> and <a href="https://megapose6d.github.io/">MegaPose</a> we use the numbers reported by the authors. For <a href="https://github.com/Simple-Robotics/cosypose">CosyPose</a> and <a href="https://github.com/princeton-vl/Coupled-Iterative-Refinement">Coupled Iterative Refinement</a> we use the publicly available codebases to re-evaluate in the sim-to-real setup. Our proposed 3DNEL Multi-stage Inverse Graphics Pipeline (MSIGP) significantly outperforms previous SOTA.
@@ -193,36 +193,38 @@
       <div class="columns is-centered">
 	 <div class="column is-full-width">
 	 <div class="content">
-	  <table>
-            <tr>
-              <th><p style="text-align:left">Method</p></th>
-	      <th><p style="text-align:center">Average recall on <a href="https://bop.felk.cvut.cz/datasets/">YCB-V</a></p></th>
-            </tr>
-            <tr>
-		    <td style="border-bottom: none;"><p style="text-align:left">3DNEL Multi-stage Inverse Graphics Pipeline (MSIGP)</a></p></td>
-		    <td style="border-bottom: none;"><p style="text-align:center"><b>84.85%</b></p></td>
-            </tr>
-            <tr>
-		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://surfemb.github.io/">SurfEMB</a></p></td>
-              <td style="border-bottom: none;"><p style="text-align:center">80.00%</p></td>
-            </tr>
-            <tr>
-		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/ethnhe/FFB6D">FFB6D</a></p></td>
-              <td style="border-bottom: none;"><p style="text-align:center">75.80%</p></td>
-            </tr>
-            <tr>
-		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://megapose6d.github.io/">MegaPose</a></p></td>
-              <td style="border-bottom: none;"><p style="text-align:center">63.3%</p></td>
-            </tr>
-            <tr>
-		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/Simple-Robotics/cosypose">CosyPose</a></p></td>
-              <td style="border-bottom: none;"><p style="text-align:center">71.42%</p></td>
-            </tr>
-            <tr>
-		    <td style="border-bottom: none;"><p style="text-align:left"><a href="https://github.com/princeton-vl/Coupled-Iterative-Refinement">Coupled Iterative Refinement</a></p></td>
-              <td style="border-bottom: none;"><p style="text-align:center">76.58%</p></td>
-            </tr>
-          </table>
+<div style="width: 100%; overflow-x: auto;">
+    <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
+        <tr>
+            <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2; text-align:left;">Method</th>
+            <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2; text-align:center;">Average recall on <a href="https://bop.felk.cvut.cz/datasets/">YCB-V</a></th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 8px; text-align:left;">3DNEL Multi-stage Inverse Graphics Pipeline (MSIGP)</td>
+            <td style="border: 1px solid black; padding: 8px; text-align:center; font-weight: bold;">84.85%</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 8px; text-align:left;"><a href="https://surfemb.github.io/">SurfEMB</a></td>
+            <td style="border: 1px solid black; padding: 8px; text-align:center;">80.00%</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 8px; text-align:left;"><a href="https://github.com/ethnhe/FFB6D">FFB6D</a></td>
+            <td style="border: 1px solid black; padding: 8px; text-align:center;">75.80%</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 8px; text-align:left;"><a href="https://megapose6d.github.io/">MegaPose</a></td>
+            <td style="border: 1px solid black; padding: 8px; text-align:center;">63.3%</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 8px; text-align:left;"><a href="https://github.com/Simple-Robotics/cosypose">CosyPose</a></td>
+            <td style="border: 1px solid black; padding: 8px; text-align:center;">71.42%</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid black; padding: 8px; text-align:left;"><a href="https://github.com/princeton-vl/Coupled-Iterative-Refinement">Coupled Iterative Refinement</a></td>
+            <td style="border: 1px solid black; padding: 8px; text-align:center;">76.58%</td>
+        </tr>
+    </table>
+</div>
 	 </div>
 	 </div>
 	 <br>
@@ -233,22 +235,15 @@
 
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-      <h2 class="title is-3">Benefits from Principled Probabilistic Modeling</h2>
+      <h2 class="title is-3">Additional Benefits from 3DNEL's Probabilistic Formulation</h2>
       </div>
       <div class="container is-max-desktop">
         <h3 class="title is-4">More Robust Object Pose Estimation</h3>
         
-            <!-- <p> -->
-	    <!-- Test -->
-            <!-- </p> -->
-            <br>
+	    <p>
+	Compared with existing more discriminative approaches, 3DNEL’s probabilistic formulation significantly reduces large-error pose estimations and improves robustness. It is especially helpful in challenging situations where similar-looking objects are present, RGB information is less information, or 2D detections are missing, as shown below.
+	    </p>
 
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-              <img src="./static/images/robustness.png" />
-          </div>
-        </div>
-  
         <div class="columns is-centered has-text-centered">
           <!-- Results. -->
           <div class="column is-four-fifths">
@@ -305,70 +300,119 @@
 
         </div>
       <h3 class="title is-4">Natural Support for Uncertainty Quantification</h3>
-      
-          <!-- <p>3DNEL MSIGP achieves accuracy on par with SOTA, and outperforms ablations on YCB-V. We report Average Recall on YCB-V in the sim-to-real setup using RGB-D inputs. Results for 3DNEL MSIGP are averaged over 5 runs. Standard deviation is below 0.2% for all setups. 3DNEL MSIGP significantly outperforms SurfEMB depiste using the same underlying models, highlighting the benefits of 3DNEL’s principled probabilistic modeling. -->
-          </p>
-          <br>
-
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
             <img src="./static/images/pose_uncertainty.svg" />
         </div>
       </div>
+	  <p>
+	  Pose uncertainty may arise from partial observability, viewpoint ambiguity, and inherent symmetries of the object. 3DNEL can naturally quantify such pose uncertainties due to its probabilistic formulation. <b>Panel (a)</b> illustrates how 3DNEL identifies the pose uncertainty of the red bowl due to its inherent symmetry. <b>Panels (b)(c)</b> consider the red mug in YCB objects. 3DNEL can accurately capture that while there is no pose uncertainty when the mug handle is visible, there are a range of equally likely poses when the mug handle is not visible.
+          </p>
    </div>
-
-    <br><br><br>
-
+   <br>
 
       <div class="container is-max-desktop">
-        <h3 class="title is-4">Extension to additional tasks without task-specific retraining</h3>
-        <h4 class="title is-5">Object Pose Tracking Through Occlusion</h4>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-full-width">
-              <img src="./static/images/tracking_synthetic.gif" />
-          </div>
-        </div>
+        <h4 class="title is-4">Object Pose Tracking Through Occlusion</h4>
+	<p>
+	3DNEL's probabilistic formulation allows us to formulate object pose tracking from video as probabilistic inference in a state-space model. Given a sequence of RGB-D frames from a video, we use the <a href="https://en.wikipedia.org/wiki/Particle_filter#Sequential_Importance_Resampling_(SIR)">Sampling Importance Resampling (SIR) particle filter</a> to infer the posterior distribution, and take the maximum a posteriori probability (MAP) estimate as our tracking estimate.
+	</p>
+	<br>
         <div class="columns is-centered has-text-centered">
           <div class="column is-full-width">
               <img  width="40%" src="./static/images/tracking_1.gif" />
           </div>
         </div>
-
-        <h4 class="title is-5">Camera Pose Tracking</h4>
-            <p>We demonstrate that 3DNEL’s probabilistic formulation
-              provides a principled framework for incorporating prior
-              knowledge about the scene and objects, and enables easy
-              extension to camera pose tracking from video using probabilistic inference in the same model without task specific retraining.</p>
-            <br>
-      </div>
-  
-
-
-      <div class="container is-max-desktop">
+	  <p>
+	Here we visualize tracking with 3DNEL with 200 particles on a representative YCB-V video, where the tomato can gets fully occluded before reappearing. 3DNEL's joint modeling of multiple objects in a scene naturally handles occlusion through rendering and can reliably track through occlusion. The tomato can is briefly occluded by a narrow occluder, and the estimated posterior from particle filtering indicates there is little uncertainty about where the tomato can is even when it is fully occluded.
+	  </p>
+	  <br>
         <div class="columns is-centered has-text-centered">
-        <h2 class="title is-3">Few-shot Object Pose Estimation Using DINOv2 Embeddings</h2>
-	</div>
-        
-            <p>So far our experiments reuse components from SurfEMB
-              to highlight the added benefits of robustness and uncertainty
-              quantification from 3DNEL’s principled probabilistic modeling. However, 3DNEL can leverage any learned neural
-              embeddings and similarity measurements. To illustrate this,
-              we demonstrate applying 3DNEL to a simple few-shot pose
-              estimation task in simulation using similarity measurements
-              based on learned neural embeddings from DINOv2, a
-              recently released vision foundation model.
-
-	      <br><br>
-
-              <div class="columns is-centered has-text-centered">
-                <div class="column is-full-width">
-                    <img src="./static/images/dino.svg" />
-                </div>
-              </div>
-      
-      
-            </div>
-
+          <div class="column is-full-width">
+              <img src="./static/images/tracking_synthetic.gif" />
+          </div>
+        </div>
+	<p>
+We can additionally leverage 3DNEL's ability to quantify uncertainty to track an object through extended occlusion. The above visualizes tracking with 3DNEL with 400 particles in such a challenging video. We observe that 3DNEL can accurately quantify uncertainty with particle filtering: the estimated posterior concentrates on the actual pose when the sugar box is visible, yet spreads to cover a range of possible poses when the sugar box becomes occluded. Such modeling of the full posterior helps 3DNEL to regain track when the sugar box reappears, after which the posterior again concentrates on the actual pose.
+	</p>
+	<br>
+        <h4 class="title is-4">Extension to Camera Pose Tracking from Video</h4>
+            <p>
+3DNEL's probabilistic formulation provides a principled framework for incorporating prior knowledge about the scene and objects, and enables easy extension to camera pose tracking from video using probabilistic inference in the same model without task specific retraining. Given the video of a static scene, we further assume we know the scene is static and only the camera moves, which translates into jointly updating all object poses by the same amount in a scene in the inference process.
+	    </p>
+	    <br>
+<div class="columns is-centered">
+ <div class="column is-full-width">
+    <div class="content">
+<div style="width: 100%; overflow-x: auto;">
+    <table style="border-collapse: collapse; width: 100%; border: 1px solid black;">
+        <tr>
+            <td style="border: 1px solid black; padding: 8px;" rowspan="2"></td>
+            <th colspan="12" style="border: 1px solid black; padding: 8px; background-color: #f2f2f2; font-weight: bold;"><p style="text-align:center">YCB-V Scene ID</p></th>
+        </tr>
+    <tr>
+        <th style="border: 1px solid black; padding: 8px;">48</th>
+        <th style="border: 1px solid black; padding: 8px;">49</th>
+        <th style="border: 1px solid black; padding: 8px;">50</th>
+        <th style="border: 1px solid black; padding: 8px;">51</th>
+        <th style="border: 1px solid black; padding: 8px;">52</th>
+        <th style="border: 1px solid black; padding: 8px;">53</th>
+        <th style="border: 1px solid black; padding: 8px;">54</th>
+        <th style="border: 1px solid black; padding: 8px;">55</th>
+        <th style="border: 1px solid black; padding: 8px;">56</th>
+        <th style="border: 1px solid black; padding: 8px;">57</th>
+        <th style="border: 1px solid black; padding: 8px;">58</th>
+        <th style="border: 1px solid black; padding: 8px;">59</th>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; padding: 8px;">Single Frame</td>
+        <td style="border: 1px solid black; padding: 8px;">71.9%</td>
+        <td style="border: 1px solid black; padding: 8px;">77.5%</td>
+        <td style="border: 1px solid black; padding: 8px;">83.1%</td>
+        <td style="border: 1px solid black; padding: 8px;">87.7%</td>
+        <td style="border: 1px solid black; padding: 8px;">87.5%</td>
+        <td style="border: 1px solid black; padding: 8px;">84.1%</td>
+        <td style="border: 1px solid black; padding: 8px;">88.4%</td>
+        <td style="border: 1px solid black; padding: 8px;">80.4%</td>
+        <td style="border: 1px solid black; padding: 8px;">82.8%</td>
+        <td style="border: 1px solid black; padding: 8px;">85.3%</td>
+        <td style="border: 1px solid black; padding: 8px;">94.3%</td>
+        <td style="border: 1px solid black; padding: 8px;">86.4%</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; padding: 8px;">Camera Pose Tracking</td>
+	<td style="border: 1px solid black; padding: 8px;"><b>81.5%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>94.7%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>97.5%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>97.0%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>97.0%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>97.0%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>97.2%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>97.5%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>96.8%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>92.2%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>98.0%</b></td>
+        <td style="border: 1px solid black; padding: 8px;"><b>97.0%</b></td>
+    </tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+	    <p>
+The above table compares the pose estimation average recalls when we do the pose estimation for each frame independently and in the camera tracking setup. The results shows that the same inference procedure can readily handle such extensions, taking into account the dynamics prior and the knowledge of a static scene within the same probabilistic model. More importantly, incorporating the additional prior knowledge leads to comprehensive improvements over single frame predictions.
+</p>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{zhou20233d,
+  title       = {{3D Neural Embedding Likelihood: Probabilistic Inverse Graphics for Robust 6D Pose Estimation}},
+  author      = {Zhou, Guangyao and Gothoskar, Nishad and Wang, Lirui and Tenenbaum, Joshua B and Gutfreund, Dan and L{\'a}zaro-Gredilla, Miguel and George, Dileep and Mansinghka, Vikash K},
+  booktitle   = {Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  year        = {2023}
+}</code></pre>
     </div>
   </section>
 
