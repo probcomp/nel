@@ -122,7 +122,7 @@
             <img src="./static/images/teaser_video.gif" />
 	    <div class="content has-text-justified">
 		<p>
-		3D neural embedding likelihood (3DNEL) combines RGB and depth information in a principled way, and defines a likelihood of real noisy RGB-D images given a 3D scene description. We formulate 6D pose estimation as posterior inference using 3DNEL in an inverse graphics framework, and develop an efficient multi-stage inverse graphics pipeline (MSIGP) based on coarse enumerative pose hypotheses generation and stochastic search. In addition to achieving SOTA performance in sim-to-real 6D pose estimation, 3DNEL's probabilistic formulation also improves pose estimation robustness, naturally quantifies uncertainty, and supports extension to additional tasks using principled probabilsitic inference without task-specific retraining.
+		<b>3D</b> <b>N</b>eural <b>E</b>mbedding <b>L</b>ikelihood (<b>3DNEL</b>) defines a likelihood of real noisy RGB-D images given a 3D scene description through a principled combination of RGB and depth information. We formulate 6D pose estimation as posterior inference using 3DNEL in an inverse graphics framework, and develop an efficient multi-stage inverse graphics pipeline (MSIGP) based on coarse enumerative pose hypotheses generation and stochastic search. In addition to achieving SOTA performance for sim-to-real 6D pose estimation, 3DNEL's probabilistic formulation also improves pose estimation robustness, naturally quantifies uncertainty, and supports extension to additional tasks using principled probabilsitic inference without task-specific retraining.
 		</p>
 	    </div>
         </div>
@@ -241,7 +241,7 @@
         <h3 class="title is-4">More Robust Object Pose Estimation</h3>
         
 	    <p>
-	Compared with existing more discriminative approaches, 3DNEL’s probabilistic formulation significantly reduces large-error pose estimations and improves robustness. It is especially helpful in challenging situations where similar-looking objects are present, RGB information is less information, or 2D detections are missing, as shown below.
+	Compared with existing more discriminative approaches, 3DNEL’s probabilistic formulation significantly reduces large-error pose estimations and improves robustness. It is especially helpful in challenging situations where similar-looking objects are present, RGB information is less informative, or 2D detections are missing, as shown in the following examples.
 	    </p>
 
         <div class="columns is-centered has-text-centered">
@@ -332,7 +332,7 @@
           </div>
         </div>
 	<p>
-We can additionally leverage 3DNEL's ability to quantify uncertainty to track an object through extended occlusion. The above visualizes tracking with 3DNEL with 400 particles in such a challenging video. We observe that 3DNEL can accurately quantify uncertainty with particle filtering: the estimated posterior concentrates on the actual pose when the sugar box is visible, yet spreads to cover a range of possible poses when the sugar box becomes occluded. Such modeling of the full posterior helps 3DNEL to regain track when the sugar box reappears, after which the posterior again concentrates on the actual pose.
+We can additionally leverage 3DNEL's ability to quantify uncertainty to track an object through extended occlusion. The above visualizes tracking with 3DNEL with 400 particles in a challenging video with extended occlusion. 3DNEL can accurately quantify uncertainty with particle filtering: the estimated posterior concentrates on the actual pose when the sugar box is visible, yet spreads to cover a range of possible poses when the sugar box becomes occluded. Such modeling of the full posterior helps 3DNEL to regain track when the sugar box reappears, after which the posterior again concentrates on the actual pose.
 	</p>
 	<br>
         <h4 class="title is-4">Extension to Camera Pose Tracking from Video</h4>
